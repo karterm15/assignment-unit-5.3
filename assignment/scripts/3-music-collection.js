@@ -1,9 +1,51 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
+let myCollection = [];
+console.log('in myCollection');
 
 
+function addToCollection(myCollection, title, artist, yearPublished){
+let newCollection = {
+  title: title,
+  artist: artist,
+  yearPublished: yearPublished
+};
+myCollection.push(newCollection);
 
+return newCollection;
+}
+
+addToCollection(myCollection, 'Kaleidoscope', 'Tiesto', 2009 )
+addToCollection(myCollection, 'Coming Home', 'Usher', 2024 )
+addToCollection(myCollection, 'Here I Stand', 'Usher', 2008 )
+addToCollection(myCollection, 'My 21st Century Bules', 'Raye', 2023 )
+addToCollection(myCollection, 'Memento', 'Jes', 2022 )
+addToCollection(myCollection, 'This Ones For You', 'Luke Combs', 2017 )
+
+console.log('Checking collections with addToCollection Function', myCollection);
+
+function showCollection(myCollection){
+for(let i=0; i<myCollection.length; i++)
+console.log(myCollection[i].title + 'by' + myCollection[i].artist + ', published in ' + myCollection[i].yearPublished);
+}
+showCollection(myCollection)
+
+let albumFound =[]; //empty array
+
+function findByArtist(myCollection, artist){
+for(let i=0; i<myCollection.length; i++){
+  if(myCollection[i].artist === artist){
+albumFound.push(myCollection[i]);
+  }//end if
+}//end for
+return albumFound;
+}//end Function
+findByArtist(myCollection,'Usher');
+console.log('did we find who we were looking for?', albumFound);
+
+findByArtist(myCollection, 'Akon');
+console.log('is there an akon album?', findByArtist);// not getting correct results
 
 
 

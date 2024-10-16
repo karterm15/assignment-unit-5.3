@@ -35,19 +35,23 @@ let albumFound =[]; //empty array
 
 function findByArtist(myCollection, artist){
 for(let i=0; i<myCollection.length; i++){
+  
   if(myCollection[i].artist === artist){
+    
 albumFound.push(myCollection[i]);
-  }//end if
+
+}//end if
 }//end for
-return albumFound;
 }//end Function
+
+
 findByArtist(myCollection,'Usher');
 console.log('did we find who we were looking for?', albumFound);
 
-findByArtist(myCollection, 'Akon');
-console.log('is there an akon album?', findByArtist);// not getting correct results
+findByArtist(myCollection, 'kane brown')
+console.log('did we find this artist?', albumFound);
 
-
+//Stretch Goal:
 
 
 
